@@ -3,8 +3,6 @@
   hosts:  webservers
   remote_user: swilliams
   become: yes
-  vars:
-    http_port: 80
   
   tasks:
   - name: Install httpd
