@@ -1,22 +1,22 @@
 ---
-- name: Install and start apache
-  hosts:  train
+- name: Install and start Nginx
+  hosts:  webservers
   remote_user: swilliams
   become: yes
   vars:
-    http_port: 80, 443
+    http_port: 80
   
   tasks:
   - name: Add epel-release repo
     yum: pkg=epel-release state=latest
 
-  - name: Install nginx
+  - name: Install Nginx
     yum: pkg=nginx state=latest
 
   - name: Insert Index Page
     template: src=templates/index.html.j2 dest=/usr/share/nginx/html/index.html
       mode=0644
 
-  - name: Start nginx
+  - name: Start and Enable Nginx
     service: name=nginx state=started enabled=yes
 
