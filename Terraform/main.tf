@@ -81,17 +81,6 @@ resource "aws_instance" "assessment-instance" {
   associate_public_ip_address = true
   key_name        = "assessment-key"
   count           = 2 # create four similar EC2 instances
-
-    user_data = <<-EOF
-              #!/bin/bash
-              sudo yum update -y
-              sudo yum git -y
-              sudo yum nc -y
-              sudo yum install httpd -y
-              sudo systemctl start httpd
-              sudo systemctl enable httpd
-              sudo bash -c 'echo assessment-terraform Web Server > /var/www/html/index.html' 
-              EOF
   tags = {
     Name = "ec2-assessment-0${count.index + 2}.example.com"
     Environment = "assessment"
