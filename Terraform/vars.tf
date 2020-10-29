@@ -9,7 +9,7 @@ variable "default_ec2_tags" {
   default = {
     Environment = "Development"
     SupportTeam = "Engineering"
-    Contact     = "xpaceform@gmail.com"
+    Contact     = "solomon.fwilliams@gmail.com"
   }
 }
 
