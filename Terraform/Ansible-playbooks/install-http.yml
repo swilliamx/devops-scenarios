@@ -1,0 +1,18 @@
+---
+- name: Install and start apache
+  hosts:  webservers
+  remote_user: swilliams
+  become: yes
+  vars:
+    http_port: 80
+    max_clients: 200
+  
+  tasks:
+  - name: Install httpd
+    yum: pkg=httpd state=latest
+    
+  - name: Write the apache config file
+    template: src=./templates/index.html.j2 dest=/var/www/html/index.html
+    
+  - name: Start httpd
+    service: name=httpd state=started enabled=yes
