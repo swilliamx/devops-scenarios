@@ -9,4 +9,4 @@
 * Create a folder called as Docker in the repo.
 * Commit the Dockerfile in the Docker folder
 * Commit the docker-compose file in the docker folder OR the ECS/EKS code into a deploy folder within docker
-* share your GitHub link along with your details to your Softrams Recruiter
+* share your GitHub link along with your details 
