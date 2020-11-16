@@ -10,4 +10,4 @@
 * Create a folder called as Terraform in the repo.
 * Seperate your modules into subfolders
 * Commit the terraform script into this folder.
-* share your GitHub link along with your details to your Softrams Recruiter
+* share your GitHub link along with your details
